@@ -1,0 +1,25 @@
+package practica1;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class Renombrar {
+	Scanner entrada = new Scanner(System.in);
+
+	public void renombrarArchivo(){
+	
+		 String antiguo = entrada.nextLine();
+		 System.out.print("$java Administrador renombrar " + antiguo + " ");
+		 String nuevo = entrada.nextLine();
+	     System.out.println("$java Administrador renombrar " + antiguo + " " + nuevo);
+		 
+	     File archivoAntiguo = new File(antiguo);
+		 File archivoNuevo = new File(nuevo);
+		 		 
+		if(archivoAntiguo.renameTo(archivoNuevo)){
+			System.out.println("El archivo se ha renombrado correctamente");
+		}else{
+			System.out.println("El archivo no se ha renombrado");
+		}
+	}
+}
